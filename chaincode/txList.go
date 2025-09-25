@@ -17,4 +17,6 @@ var txList = []tx.Transaction{
 	txdefs.ArchiveInstrumento,
 	txdefs.SearchInstrumentosByStatus,
 	txdefs.GetInstrumentHistory,
+	txdefs.ActivateInstrumento,
+	txdefs.ExtinguishInstrumento,
 }
