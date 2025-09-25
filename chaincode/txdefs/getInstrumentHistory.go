@@ -11,12 +11,10 @@ import (
 	tx "github.com/hyperledger-labs/cc-tools/transactions"
 )
 
-// GetInstrumentHistory - retorna histórico de versões do asset (GetHistoryForKey)
-// GET Method
 var GetInstrumentHistory = tx.Transaction{
 	Tag:         "getInstrumentHistory",
 	Label:       "Get Instrument History",
-	Description: "Return the history of an Instrumento using history database",
+	Description: "Retorna or histórico de um instrumento usando funcionalidade de histórico",
 	Method:      "GET",
 	Callers: []accesscontrol.Caller{
 		{MSP: `$org\dMSP`},

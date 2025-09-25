@@ -13,4 +13,5 @@ var assetTypeList = []assets.AssetType{
 	assettypes.Advogado,
 	assettypes.Parte,
 	assettypes.Instrumento,
+	assettypes.Firma,
 }

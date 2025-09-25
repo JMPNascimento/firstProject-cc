@@ -14,8 +14,6 @@ var txList = []tx.Transaction{
 	txdefs.GetNumberOfBooksFromLibrary,
 	txdefs.UpdateBookTenant,
 	txdefs.GetBooksByAuthor,
-	txdefs.CreateInstrumento,
-	txdefs.UpdateInstrumento,
 	txdefs.ArchiveInstrumento,
 	txdefs.SearchInstrumentosByStatus,
 	txdefs.GetInstrumentHistory,

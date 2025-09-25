@@ -16,7 +16,7 @@ import (
 var ArchiveInstrumento = tx.Transaction{
 	Tag:         "archiveInstrumento",
 	Label:       "Archive Instrumento",
-	Description: "Set status to Arquivado and append an entry to internal status history",
+	Description: "Seta status para Arquivado e atualiza no histórico",
 	Method:      "POST",
 	Callers: []accesscontrol.Caller{
 		{MSP: `$org\dMSP`},

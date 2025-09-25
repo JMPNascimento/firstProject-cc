@@ -10,12 +10,10 @@ import (
 	tx "github.com/hyperledger-labs/cc-tools/transactions"
 )
 
-// SearchInstrumentosByStatus - utiliza CouchDB rich query via assets.Search
-// GET Method (read-only)
 var SearchInstrumentosByStatus = tx.Transaction{
 	Tag:         "searchInstrumentosByStatus",
 	Label:       "Search Instrumentos by Status",
-	Description: "Use CouchDB rich query to find instrumentos by status_juridico",
+	Description: "Usa o query do CouchDB para encontrar instrumentos por status jurídico",
 	Method:      "GET",
 	Callers: []accesscontrol.Caller{
 		{MSP: `$org\dMSP`},
