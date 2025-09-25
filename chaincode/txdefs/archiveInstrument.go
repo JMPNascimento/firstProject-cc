@@ -15,7 +15,7 @@ import (
 
 var ArchiveInstrumento = tx.Transaction{
 	Tag:         "archiveInstrumento",
-	Label:       "Archive Instrumento",
+	Label:       "Arquivar Instrumento",
 	Description: "Seta status para Arquivado e atualiza no histórico",
 	Method:      "POST",
 	Callers: []accesscontrol.Caller{
@@ -49,10 +49,8 @@ var ArchiveInstrumento = tx.Transaction{
 		}
 		instMap := (map[string]interface{})(*instAsset)
 
-		// atualiza status para "Arquivado" (assumimos enum 1)
 		instMap["status_juridico"] = float64(1)
 
-		// adiciona entrada no histórico interno (campo historico_status)
 		var hist []interface{}
 		if h, ok := instMap["historico_status"].([]interface{}); ok {
 			hist = h
@@ -66,7 +64,6 @@ var ArchiveInstrumento = tx.Transaction{
 		hist = append(hist, entry)
 		instMap["historico_status"] = hist
 
-		// grava (Update faz validações)
 		updated, uerr := instAsset.Update(stub, instMap)
 		if uerr != nil {
 			return nil, errors.WrapError(uerr, "failed to archive instrumento")

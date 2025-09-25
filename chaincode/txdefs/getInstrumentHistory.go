@@ -36,7 +36,6 @@ var GetInstrumentHistory = tx.Transaction{
 			return nil, errors.NewCCError("instrumento: parâmetro inválido", 400)
 		}
 
-		// obter map atual para recuperar a chave string (campo @key)
 		instMap, err := instKey.GetMap(stub)
 		if err != nil {
 			return nil, errors.WrapErrorWithStatus(err, "failed to get instrumento", err.Status())
@@ -62,7 +61,6 @@ var GetInstrumentHistory = tx.Transaction{
 			var value map[string]interface{}
 			_ = json.Unmarshal(mod.Value, &value)
 
-			// Convert timestamp to RFC3339 if possible
 			var ts interface{}
 			if mod.Timestamp != nil {
 				t := time.Unix(mod.Timestamp.Seconds, int64(mod.Timestamp.Nanos)).UTC().Format(time.RFC3339)

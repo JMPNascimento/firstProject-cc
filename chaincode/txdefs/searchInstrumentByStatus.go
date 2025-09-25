@@ -12,7 +12,7 @@ import (
 
 var SearchInstrumentosByStatus = tx.Transaction{
 	Tag:         "searchInstrumentosByStatus",
-	Label:       "Search Instrumentos by Status",
+	Label:       "Search Instrument by Status",
 	Description: "Usa o query do CouchDB para encontrar instrumentos por status jurídico",
 	Method:      "GET",
 	Callers: []accesscontrol.Caller{
@@ -45,7 +45,7 @@ var SearchInstrumentosByStatus = tx.Transaction{
 				"status_juridico": statusF,
 			},
 		}
-		// opcional limit
+
 		if l, lok := req["limit"].(float64); lok && l > 0 {
 			query["limit"] = l
 		}
